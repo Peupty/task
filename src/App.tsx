@@ -1,6 +1,7 @@
 import React, { ReactElement, useState } from "react"
 import "./App.css"
 import Button from "./components/BaseButton"
+import ExportReportContextProvider from "./components/export-report/ExportReportContextProvider"
 import ExportReportModal from "./components/export-report/ExportReportModal"
 
 function App() {
@@ -9,12 +10,16 @@ function App() {
   const openModal = () => setIsModalOpen(true)
 
   const [modal, setModal] = useState<ReactElement>(
-    <ExportReportModal onCancel={closeModal} />
+    <ExportReportContextProvider>
+      <ExportReportModal onCancel={closeModal} />
+    </ExportReportContextProvider>
   )
 
   return (
     <div className="app">
-      <div id="modal" className="modal">{isModalOpen && modal}</div>
+      <div id="modal" className="modal">
+        {isModalOpen && modal}
+      </div>
       <Button onClick={openModal}>Export</Button>
     </div>
   )
