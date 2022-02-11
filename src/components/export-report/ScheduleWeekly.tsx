@@ -24,7 +24,7 @@ const ScheduleWeekly: React.FC<{}> = () => {
           </option>
         ))}
       </select>
-      <span className="mx-2">at</span>
+      <span className="mx-4">at</span>
       <input
         type="time"
         name="time"

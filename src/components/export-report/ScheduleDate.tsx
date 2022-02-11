@@ -21,7 +21,7 @@ const ScheduleDate: React.FC<{}> = () => {
           setDate({ ...datetime, day: e.target.value })
         }}
       />
-      <span className="mx-2">at</span>
+      <span className="mx-4">at</span>
       <input
         type="time"
         name="time"
