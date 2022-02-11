@@ -2,14 +2,14 @@ import { TReportContext } from "../components/export-report/context"
 import { TFetch } from "../types/browser"
 
 export const exportReport =
-  (fetch: TFetch) =>
+  (fetch: TFetch, url: string) =>
   async (
     data: Omit<TReportContext, "dispatch">,
     onSuccess: Function,
     onError: Function
   ) => {
     try {
-      await fetch("https://postman-echo.com/post", {
+      await fetch(url, {
         method: "post",
         body: JSON.stringify(data),
         mode: "no-cors",
@@ -22,6 +22,6 @@ export const exportReport =
   }
 
 export default {
-  exportReport: exportReport(fetch),
+  exportReport: exportReport(fetch, "https://postman-echo.com/post"),
 }
 
