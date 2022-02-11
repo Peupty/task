@@ -1,6 +1,6 @@
 import http from "../../http/http"
-import { TReportContext } from "./context"
 import { createResponseCallback } from "../../utils/createResponseCallback"
+import { TReportState } from "./context"
 
 export const onSuccess = (cb: Function) =>
   createResponseCallback("your request has been submitted", cb)
@@ -11,7 +11,7 @@ export const onSubmit =
   (onSuccess: Function, onError: Function) =>
   (
     e: React.FormEvent<HTMLFormElement>,
-    data: Omit<TReportContext, "dispatch">,
+    data: TReportState,
     cb: Function
   ) => {
     e.preventDefault()

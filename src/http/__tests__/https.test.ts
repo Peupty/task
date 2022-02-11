@@ -1,8 +1,8 @@
-import { TReportContext } from "../../components/export-report/context"
+import { TReportState } from "../../components/export-report/context"
 import { exportReport as createExportReport } from "../http"
 
 describe("exportReport method", () => {
-  const data: Omit<TReportContext, "dispatch"> = {
+  const data: TReportState = {
     name: "test",
     email: "test@test.com",
     format: "csv",

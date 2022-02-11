@@ -7,9 +7,11 @@ export type TReportContext = {
   format: TReportFormat
   email: string
   scheduleOption: TScheduleOption
-  date?: TReportDate,
+  date?: TReportDate
   dispatch: Dispatch<TExportReportAction>
 }
+
+export type TReportState = Omit<TReportContext, "dispatch">
 
 export type TScheduleOption = "none" | "date" | "daily" | "weekly"
 
@@ -25,4 +27,3 @@ export type TReportDate =
 export const ExportReportContext = createContext<TReportContext>(
   getInitialState()
 )
-

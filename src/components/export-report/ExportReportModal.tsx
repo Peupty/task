@@ -1,6 +1,6 @@
 import React, { ReactElement, useContext, useEffect, useState } from "react"
 import Button from "../BaseButton"
-import { ExportReportContext, TReportContext } from "./context"
+import { ExportReportContext, TReportState } from "./context"
 import { getScheduleComponent } from "./getScheduleComponent"
 import ReportEmail from "./ReportEmail"
 import ReportFormat from "./ReportFormat"
@@ -11,7 +11,7 @@ type TExportReportModalProps = {
   onCancel: () => void
   onSubmit: (
     e: React.FormEvent<HTMLFormElement>,
-    state: Omit<TReportContext, "dispatch">,
+    state: TReportState,
     onCancel: Function
   ) => void
 }

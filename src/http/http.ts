@@ -1,10 +1,10 @@
-import { TReportContext } from "../components/export-report/context"
+import { TReportState } from "../components/export-report/context"
 import { TFetch } from "../types/browser"
 
 export const exportReport =
   (fetch: TFetch, url: string) =>
   async (
-    data: Omit<TReportContext, "dispatch">,
+    data: TReportState,
     onSuccess: Function,
     onError: Function
   ) => {
