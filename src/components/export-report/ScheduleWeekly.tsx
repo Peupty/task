@@ -11,7 +11,7 @@ const ScheduleWeekly: React.FC<{}> = () => {
   }, [datetime])
 
   return (
-    <fieldset>
+    <fieldset className="form__field">
       <span className="label">Every</span>
       <select
         name="date"
@@ -24,7 +24,7 @@ const ScheduleWeekly: React.FC<{}> = () => {
           </option>
         ))}
       </select>
-      <span>at</span>
+      <span className="mx-2">at</span>
       <input
         type="time"
         name="time"

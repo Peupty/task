@@ -5,10 +5,10 @@ const ReportEmail: React.FC<{}> = () => {
   const { dispatch } = useContext(ExportReportContext)
 
   return (
-    <fieldset>
-      <label htmlFor="email" className="label">
+    <fieldset className="form__field">
+      <span className="label">
         Email to
-      </label>
+      </span>
       <input
         type="email"
         placeholder="client@company.com"

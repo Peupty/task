@@ -16,7 +16,7 @@ const ReportFormat: React.FC<{}> = () => {
   const { dispatch, ...state } = useContext(ExportReportContext)
 
   return (
-    <fieldset id="format">
+    <fieldset id="format" className="form__field">
       <span className="label">Format</span>
       <div className="row">
         {formatTypes.map(({ label, type }) => (
@@ -24,6 +24,7 @@ const ReportFormat: React.FC<{}> = () => {
             <input
               type="radio"
               name="format"
+              className="radio-button"
               id={`format-${type}`}
               checked={state.format === type}
               onChange={() =>

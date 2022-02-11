@@ -3,9 +3,10 @@ import { ExportReportContext } from "./context"
 
 const ScheduleDaily: React.FC<{}> = () => {
   const { dispatch } = useContext(ExportReportContext)
+
   return (
-    <fieldset>
-      <span>Everyday at</span>
+    <fieldset className="form__field">
+      <span className="label">Everyday at</span>
       <input
         type="time"
         name="time"

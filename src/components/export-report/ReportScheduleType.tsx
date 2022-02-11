@@ -18,22 +18,25 @@ const ReportScheduleOption: React.FC<{}> = () => {
   const { dispatch, scheduleOption } = useContext(ExportReportContext)
 
   return (
-    <fieldset id="schedule">
+    <fieldset id="schedule" className="form__field">
       <span className="label">Schedule</span>
-      {scheduleTypes.map(({ label, type }) => (
-        <div key={type}>
-          <input
-            type="radio"
-            name="schedule"
-            id={type}
-            onChange={() =>
-              dispatch({ type: "UPDATE_SCHEDULE_OPTION", payload: type })
-            }
-            checked={scheduleOption === type}
-          />
-          <label htmlFor={type}>{label}</label>
-        </div>
-      ))}
+      <div className="row">
+        {scheduleTypes.map(({ label, type }) => (
+          <div key={type}>
+            <input
+              type="radio"
+              name="schedule"
+              className="radio-button"
+              id={type}
+              onChange={() =>
+                dispatch({ type: "UPDATE_SCHEDULE_OPTION", payload: type })
+              }
+              checked={scheduleOption === type}
+            />
+            <label htmlFor={type}>{label}</label>
+          </div>
+        ))}
+      </div>
     </fieldset>
   )
 }

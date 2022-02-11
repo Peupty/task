@@ -10,8 +10,8 @@ const ScheduleDate: React.FC<{}> = () => {
   }, [datetime])
 
   return (
-    <fieldset>
-      <div className="label">Date</div>
+    <fieldset className="form__field">
+      <span className="label">Date</span>
       <input
         type="date"
         name="date"
@@ -21,7 +21,7 @@ const ScheduleDate: React.FC<{}> = () => {
           setDate({ ...datetime, day: e.target.value })
         }}
       />
-      <span>at</span>
+      <span className="mx-2">at</span>
       <input
         type="time"
         name="time"

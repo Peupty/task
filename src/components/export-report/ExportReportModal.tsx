@@ -24,14 +24,22 @@ const ExportReportModal: React.FC<TExportReportModalProps> = ({ onCancel }) => {
   }, [scheduleOption])
 
   return (
-    <form onSubmit={e => onSubmit(e, state, onCancel)}>
-      <h1>Export report</h1>
-      <ReportName />
-      <ReportFormat />
-      <ReportEmail />
-      <ReportScheduleOption />
-      {subcomponent}
+    <form
+      onSubmit={e => onSubmit(e, state, onCancel)}
+      className="form"
+      autoComplete="off"
+    >
       <div>
+        <div className="form__heading">
+          <h1>Export report</h1>
+        </div>
+        <ReportName />
+        <ReportFormat />
+        <ReportEmail />
+        <ReportScheduleOption />
+        {subcomponent}
+      </div>
+      <div className="form__controls">
         <Button type="button" onClick={onCancel}>
           Cancel
         </Button>

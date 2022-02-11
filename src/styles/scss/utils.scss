@@ -1,0 +1,13 @@
+$unit: 0.25rem;
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.mx {
+  &-2 {
+    margin-left: 2 * $unit;
+    margin-right: 2 * $unit;
+  }
+}
