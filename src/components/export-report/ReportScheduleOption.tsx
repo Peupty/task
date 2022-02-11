@@ -18,7 +18,11 @@ const ReportScheduleOption: React.FC<{}> = () => {
   const { dispatch, scheduleOption } = useContext(ExportReportContext)
 
   return (
-    <fieldset id="schedule" className="form__field">
+    <fieldset
+      id="schedule"
+      className="form__field"
+      data-testid="form-schedule-option"
+    >
       <span className="label">Schedule</span>
       <div className="row">
         {scheduleTypes.map(({ label, type }) => (
