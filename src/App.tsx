@@ -3,6 +3,7 @@ import "./App.css"
 import Button from "./components/BaseButton"
 import ExportReportContextProvider from "./components/export-report/ExportReportContextProvider"
 import ExportReportModal from "./components/export-report/ExportReportModal"
+import onSubmit from "./components/export-report/formHandler"
 
 function App() {
   const [isModalOpen, setIsModalOpen] = useState(false)
@@ -11,7 +12,7 @@ function App() {
 
   const [modal, setModal] = useState<ReactElement>(
     <ExportReportContextProvider>
-      <ExportReportModal onCancel={closeModal} />
+      <ExportReportModal onCancel={closeModal} onSubmit={onSubmit} />
     </ExportReportContextProvider>
   )
 
