@@ -1,26 +1,23 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { ReactElement, useState } from "react"
+import "./App.css"
+import Button from "./components/BaseButton"
+import ExportReportModal from "./components/export-report/ExportReportModal"
 
 function App() {
+  const [isModalOpen, setIsModalOpen] = useState(false)
+  const closeModal = () => setIsModalOpen(false)
+  const openModal = () => setIsModalOpen(true)
+
+  const [modal, setModal] = useState<ReactElement>(
+    <ExportReportModal onCancel={closeModal} />
+  )
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <div id="modal" className="modal">{isModalOpen && modal}</div>
+      <Button onClick={openModal}>Export</Button>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
