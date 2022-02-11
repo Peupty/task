@@ -10,7 +10,7 @@ const ScheduleDate: React.FC<{}> = () => {
   }, [datetime])
 
   return (
-    <fieldset className="form__field">
+    <fieldset className="form__field" data-testid="date">
       <span className="label">Date</span>
       <input
         type="date"

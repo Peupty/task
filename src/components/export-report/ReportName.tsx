@@ -13,6 +13,7 @@ const ReportName: React.FC<{}> = () => {
         type="text"
         name="report-name"
         id="report-name"
+        data-testid="name"
         placeholder="Shareablee Report"
         onChange={e =>
           dispatch({ type: "UPDATE_NAME", payload: e.target.value })
