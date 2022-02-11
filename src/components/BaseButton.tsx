@@ -3,11 +3,11 @@ import { TButtonProps } from "../types/Button"
 
 const Button: React.FC<TButtonProps> = ({
   variant = "light",
-  onClick,
   children,
+  ...props
 }) => {
   return (
-    <button className={`button button--${variant}`} onClick={onClick}>
+    <button className={`button button--${variant}`} {...props}>
       {children}
     </button>
   )

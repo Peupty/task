@@ -1,6 +1,8 @@
+import React, { ButtonHTMLAttributes } from "react"
+
 export type TButtonVariant = "light" | "dark"
 
 export type TButtonProps = {
   variant?: TButtonVariant
-  onClick: () => void
-}
+  onClick?: () => void
+} & ButtonHTMLAttributes<HTMLButtonElement>
